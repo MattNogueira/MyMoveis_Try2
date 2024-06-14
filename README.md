@@ -95,18 +95,18 @@ Agora, cada item oferecido como requisito funcional pela IA será analisado crit
 >   - O sistema deve permitir que o proprietário cadastre um quarto para aluguel, especificando se faz parte de um imóvel maior.
 >   - O cadastro deve incluir informações como: endereço do imóvel, características do quarto (tamanho, mobília, etc.), preço do aluguel mensal, descrição detalhada e fotos.
 
-Os dois primeiros itens, 1 e 2, estão aceitáveis e serão incluídos no passo seguinte, com a exceção de que dada a inexistência de controle de acesso, não será de responsabilidade de um usuário cadastrado, vulgo proprietário, realizar o cadastro. Além disso, não se incluirá imagens dentre os atributos dos imóveis. O último item do trecho, item 3, é insuficiente: Sempre que um quarto é criado, ele deve ser parte de um imóvel, não sendo opcional. Ademais, o campo 'características do quarto' é muito abrangente e deve ser separado nas informações relevantes, que determinarei serem: tamanho e se é mobiliado ou não, apenas.
+Os dois primeiros itens, 1 e 2, estão aceitáveis e serão incluídos no passo seguinte, com a exceção de que dada a inexistência de controle de acesso, não será de responsabilidade de um usuário cadastrado, vulgo proprietário, realizar o cadastro. Além disso, não se incluirá imagens dentre os atributos dos imóveis. O último item do trecho, item 3, é insuficiente: Sempre que um quarto é criado, ele deve ser parte de um imóvel, não sendo opcional. Ademais, o campo 'características do quarto' é muito abrangente e deve ser separado nas informações relevantes, que determinarei serem: tamanho e se é mobiliado ou não, apenas. Endereço do imóvel não será incluído dentro de quarto e o sistema não utilizará fotos.
 >#### Cadastro de Usuários
 >4. **Cadastro de Usuário**
 >   - O sistema deve permitir que novos usuários se cadastrem.
->   - O cadastro deve incluir informações como: nome completo, e-mail, senha, telefone, saldo e endereço.
+>   - O cadastro deve incluir informações como: nome completo, e-mail, senha, telefone e endereço.
 >   - O sistema deve verificar a unicidade do e-mail para garantir que não haja duplicidade.
 >
 >5. **Login de Usuário**
 >   - O sistema deve permitir que os usuários façam login utilizando e-mail e senha.
 >   - O sistema deve fornecer uma opção de recuperação de senha.
 
-O sistema é isento de interface e não pretende possibilitar que os usuários se cadastrem ou mesmo que iniciem uma sessão através do login. O que será aproveitado será apenas a não duplicidade de email e os atributos vinvulados ao usuário.
+O sistema é isento de interface e não pretende possibilitar que os usuários se cadastrem ou mesmo que iniciem uma sessão através do login. O que será aproveitado será apenas a não duplicidade de email e os atributos vinvulados ao usuário com exceção da senha.
 >#### Gerenciamento de Imóveis e Quartos
 >6. **Edição e Exclusão de Imóveis e Quartos**
 >   - O sistema deve permitir que os proprietários editem ou excluam seus cadastros de imóveis e quartos.
@@ -151,3 +151,14 @@ Nada daqui será aproveitado. Não é a proposta do projeto.
 Desses requisitos, apenas se utilizará da proteção de dados através de atributos private e protected, manipulados através de métodos. O resto vai além do escopo do projeto.
 
 ### Diagrama de Classes
+Foi especificado que o "diagrama de classes" fosse apresentado por texto e com linguagem natural.
+
+- Imovel possui endereço, número de quartos, número de banheiros, área em metros quadrados, descrição detalhada e herda suas características para duas outras classes. Implementa gets, sets e toString.
+- ImovelOperavel possui preco e tipoOperacao, herando os demais atributos de Imovel. Implementa gets, sets e toString.
+- ImovelUtilitario possui um conjunto de quartos limitado pelo atributo número de quartos, herdando os demais atributos de Imovel. Implementa gets, sets, toString e adicionaQuarto.
+- Quarto possui tamanho, se é mobiliado, preço do aluguel mensal, descrição detalhada e disponibilidade. Implementa gets, sets, toString e VerificaDisponibilidade.
+- Filtro não possui atributos. Implementa Filtragem.
+
+### Codificação (com IA)
+
+A codificação será realizada com auxílio de IA, com o estudante corrigindo o código gerado pela IA para atender corretamente aos requisitos.
